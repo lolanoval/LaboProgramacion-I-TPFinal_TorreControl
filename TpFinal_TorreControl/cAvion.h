@@ -11,9 +11,10 @@ public:
 	int ID, cantcombustible, pasajeros, pasajerosmax, velocidad, helice, tamanio;
 	float tiempomaxvuelo;
 	cFecha* fechaDespegue;
+  
 	//ver de agregar aceleracion al igual que velocidad 
-	//tanto tamaÒo como distancia condicionan la pista a asignar
-	//ver de hacer ID const y que se cree autom·ticamente
+	//tanto tama√±o como distancia condicionan la pista a asignar
+	//ver de hacer ID const y que se cree autom√°ticamente
 	cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio);
 	virtual ~cAvion();
 	virtual bool Despegar(cPista* pista); //si pudo despegar no

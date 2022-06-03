@@ -4,18 +4,28 @@ cBiplano::cBiplano(int _cantcombustible, int _pasajerosmax, int _tamanio, int _a
 {
 	this->aceleracion = _aceleracion;
 	this->helice = 2;
+	this->pasajerosmax = 65;
+
 }
 
 cBiplano::~cBiplano()
 {
 }
 
-void cBiplano::voltereta()
+void cBiplano::ImprimirDatos()
 {
 }
 
-void cBiplano::ImprimirDatos()
+bool cBiplano::Despegar(cPista* pista)
 {
+	this->aceleracion = 250;
+	cout << "Se inclina un angulo de 25°" << endl;
+	return true;
+}
+
+bool cBiplano::Aterrizar(cPista* pista)
+{
+	return false;
 }
 
 string cBiplano::toString()

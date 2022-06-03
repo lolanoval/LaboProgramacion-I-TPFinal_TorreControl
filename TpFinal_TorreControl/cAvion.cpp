@@ -31,7 +31,6 @@ bool cAvion::Aterrizar(cPista* pista)
 	fechaDespegue->reSet();
 }
 
-
 void cAvion::setTiempoVuelo()
 {
 	tiempomaxvuelo = (float)cantcombustible / 28.5;
