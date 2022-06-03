@@ -5,26 +5,46 @@ cAvion::cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio)
 	this->cantcombustible = _cantcombustible;
 	this->pasajerosmax = _pasajerosmax;
 	this->tamanio = _tamanio;
+	ID = 0;//vamos a hacerlo const para que se genere automaticamente 
+	this->pasajeros = 0;
+	this->velocidad = 0;
+	this->helice = 0;
+	this->tiempomaxvuelo = 0;
 }
 
 cAvion::~cAvion()
 {
 }
 
-bool cAvion::Despegar()
+bool cAvion::Despegar(cPista* pista)
 {
+	return false;
 }
 
-bool cAvion::Aterrizar()
+bool cAvion::Aterrizar(cPista* pista)
 {
+	return false;
 }
+
+//bool cAvion::Despegar(cPista* pista)
+//{
+//}
+//
+//bool cAvion::Aterrizar(cPista* pista)
+//{
+//	
+//}
 
 float cAvion::setTiempoVuelo()
 {
 	return 0.0f;
 }
 
-float cAvion::setDistancia()
+void cAvion::ImprimirDatos()
 {
-	return 0.0f;
+}
+
+string cAvion::toString()
+{
+	return string();
 }

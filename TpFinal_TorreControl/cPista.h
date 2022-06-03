@@ -12,5 +12,11 @@ public:
 	~cPista();
 	void AvionDespegando();
 	void AvionAterrizando();
+	void ImprimirDatos();
+	string toString();
+	bool getOcupada() { return ocupada; };
+	int getTamanio() { return tamanio; };
+	int getDistancia() { return distancia; };
+
 };
 

@@ -13,18 +13,26 @@ class cTorreControl
 	cLista<cAvion>* AvionesEnVuelo;
 	cLista<cAvion>* AvionesDespegando;
 	cLista<cAvion>* AvionesAterrizando;
-	cLista<cPista>* PistasLibres;
+	cLista<cPista>* Pistas;
 
 public:
-	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _PistasLibres); 
+	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas); 
 	~cTorreControl();
+	cPista* AsignarPista(cAvion* avion);
+	float TiempoOcupacionPista(cAvion* avion); //lo que tarda en aterrizar o despegar 
+	void EstadoAvion();
+	bool ReportarIncidente();//si pasa del tiempo max de vuelo, se reporta
+	void Interseccion();
+	void ImprimirDatos();
+	string toString();
+	cLista<cPista>* subListaPistasLibres();
+
 	void ImprimirAvionesEnVuelo();
 	void ImprimirAvionesAterrizando();
 	void ImprimirAvionesDespegando();
 	void ImprimirPistasLibres();
-	float TiempoOcupacionPista();
-	void EstadoAvion();
-	void Interseccion();
-	
+
+	void DespegarAvion(cAvion* avion);
+	void AterrizarAvion(cAvion* avion);
 };
 

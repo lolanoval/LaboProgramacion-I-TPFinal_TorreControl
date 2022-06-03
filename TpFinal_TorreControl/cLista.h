@@ -24,7 +24,6 @@ public:
 	T* Quitar(T* P);
 	bool Eliminar(T* P);
 	T* BuscarenPos(int i);
-
 };
 
 template<class T>

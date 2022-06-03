@@ -16,3 +16,12 @@ void cPista::AvionDespegando()
 void cPista::AvionAterrizando()
 {
 }
+
+void cPista::ImprimirDatos()
+{
+}
+
+string cPista::toString()
+{
+	return string();
+}

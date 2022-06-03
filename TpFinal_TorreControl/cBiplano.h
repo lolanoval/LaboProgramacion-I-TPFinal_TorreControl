@@ -6,11 +6,17 @@ using namespace std;
 class cBiplano :
     public cAvion
 {
+private:
     int aceleracion;
 
 public:
-    cBiplano(int _aceleracion);
+    cBiplano(int _cantcombustible, int _pasajerosmax, int _tamanio, int _aceleracion);
     ~cBiplano();
     void voltereta();
+    void ImprimirDatos();
+    bool Despegar(cPista* pista); //si pudo despegar no
+    bool Aterrizar(cPista* pista); // si pudo aterrizar o no
+    string toString();
+    float Distancia();
 };
 
