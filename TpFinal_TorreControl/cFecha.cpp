@@ -43,17 +43,17 @@ cFecha::cFecha(int d, int m, int a, int hs, int min) {
 cFecha::~cFecha() {
 }
 
-int cFecha::HorasEntreFechas(cFecha* inicio, cFecha* fin)
+float cFecha::HorasEntreFechas(cFecha* otra) //la otra es la fecha de fin
 {
 	int dif = 0;
-	time_t aux_inicio = mktime(&(inicio->fecha)); //paso las fechas a segundos
-	time_t aux_fin = mktime(&(fin->fecha));
+	time_t aux_inicio = mktime(&(fecha)); //paso las fechas a segundos
+	time_t aux_fin = mktime(&(otra->fecha));
 
 	//verifico que las fechas que recibo no sean null ni estén incompletas
-	if ((inicio != NULL && fin != NULL) && inicio->FechaCompleta() && fin->FechaCompleta())
+	if ((otra != NULL) && FechaCompleta() && otra->FechaCompleta())
 	{
 		//verifico que fecha fin > fecha inicio con operador sobrecargado
-		if (*inicio > *fin)
+		if (aux_inicio > aux_fin)
 			throw exception("Las fechas no son válidas");
 		else
 		{

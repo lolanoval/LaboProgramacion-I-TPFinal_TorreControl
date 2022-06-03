@@ -4,7 +4,7 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
-
+ 
 class cFecha
 {
 private:
@@ -30,7 +30,7 @@ public:
 #pragma region Metodos
 
 	//Calcula el numero de días entre dos fechas
-	static int HorasEntreFechas(cFecha* inicio, cFecha* fin);
+	float HorasEntreFechas(cFecha* otra);
 
 
 	//Cambia la fecha a la fecha actual
@@ -78,23 +78,13 @@ public:
 	int getMes() { return fecha.tm_mon; };
 	int getDia() { return fecha.tm_wday; };
 
-#pragma endregion
-	//int Edad(int dia, int mes, int anio)
-	//{
-	//	cFecha* fechanac = new cFecha(dia, mes, anio);
-	//	if (fechanac->FechaCompleta() == true)
-	//	{
-	//		struct tm date = { 0 };
-	//		date.tm_year = anio - 1900;
-	//		date.tm_mon = mes - 1;
-	//		date.tm_mday = dia;
-	//		time_t normal = mktime(&date);
-	//		time_t current;
-	//		time(&current);
-	//		int edad = (difftime(current, normal) + 86400L / 2) / 86400L;
-	//		return edad / 365;
-	//	}
-	//	else return -1;
+	void reSet()
+	{
+		fecha.tm_year = 0;
+		fecha.tm_mday = 0;
+		fecha.tm_mon = 0;
+		fecha.tm_hour = 0;
+		fecha.tm_min = 0;
+	};
 
-	//}
 };
