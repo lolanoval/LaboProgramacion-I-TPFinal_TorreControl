@@ -4,15 +4,12 @@ cBiplano::cBiplano(int _cantcombustible, int _pasajerosmax, int _tamanio, int _a
 {
 	this->aceleracion = _aceleracion;
 	this->helice = 2;
+	this->pasajerosmax = 65;
+
 }
 
 cBiplano::~cBiplano()
 {
-}
-
-void cBiplano::voltereta()
-{
-
 }
 
 void cBiplano::ImprimirDatos()

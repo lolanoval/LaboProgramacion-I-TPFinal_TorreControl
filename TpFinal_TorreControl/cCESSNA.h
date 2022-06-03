@@ -3,6 +3,7 @@
 #include <iostream>
 #include "cAvion.h"
 using namespace std;
+#define cargamax 1000
 class cCESSNA :
     public cAvion
 {
@@ -13,6 +14,8 @@ public:
     ~cCESSNA();
     float tiempoDescarga();
     //ver de ir aumentando la carga a medida que se le agregan cosas (podemos ver de hacerlo durante la inicializacion)
+    void setDatos();
+
     bool Despegar(cPista* pista); //si pudo despegar no
     bool Aterrizar(cPista* pista); // si pudo aterrizar o no
     void ImprimirDatos();

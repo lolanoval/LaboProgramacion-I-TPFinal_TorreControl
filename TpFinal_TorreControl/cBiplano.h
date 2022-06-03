@@ -12,7 +12,6 @@ private:
 public:
     cBiplano(int _cantcombustible, int _pasajerosmax, int _tamanio, int _aceleracion);
     ~cBiplano();
-    void voltereta();
     void ImprimirDatos();
     bool Despegar(cPista* pista); //si pudo despegar no
     bool Aterrizar(cPista* pista); // si pudo aterrizar o no
