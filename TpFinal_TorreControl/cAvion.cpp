@@ -26,15 +26,6 @@ bool cAvion::Aterrizar(cPista* pista)
 	return false;
 }
 
-//bool cAvion::Despegar(cPista* pista)
-//{
-//}
-//
-//bool cAvion::Aterrizar(cPista* pista)
-//{
-//	
-//}
-
 float cAvion::setTiempoVuelo()
 {
 	return 0.0f;

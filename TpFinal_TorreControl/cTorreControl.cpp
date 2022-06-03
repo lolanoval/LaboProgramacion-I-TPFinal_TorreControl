@@ -70,11 +70,12 @@ void cTorreControl::DespegarAvion(cAvion* avion)
 
 float cTorreControl::TiempoOcupacionPista(cAvion* avion)
 {
-	return nullptr;
+	return NULL;
 }
 
 void cTorreControl::EstadoAvion()
 {
+
 }
 
 void cTorreControl::Interseccion()
