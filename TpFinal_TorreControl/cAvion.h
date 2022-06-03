@@ -8,6 +8,7 @@ class cAvion
 public:
 	//string modelo; solo es relevante para CESSNA
 	int ID, tiempomaxvuelo, cantcombustible, pasajeros, pasajerosmax, velocidad, helice, tamanio;
+	
 	//ver de agregar aceleracion al igual que velocidad 
 	//tanto tamaño como distancia condicionan la pista a asignar
 	//ver de hacer ID const y que se cree automáticamente
