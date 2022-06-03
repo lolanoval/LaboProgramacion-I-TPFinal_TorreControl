@@ -10,34 +10,31 @@ cAvion::cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio)
 	this->velocidad = 0;
 	this->helice = 0;
 	this->tiempomaxvuelo = 0;
+	fechaDespegue = new cFecha();
+	setTiempoVuelo();
 }
 
 cAvion::~cAvion()
 {
+	delete fechaDespegue;//preguntar por el tema del delete del main en el caso que sea necesario
 }
 
-bool cAvion::Despegar(cPista* pista)
+bool cAvion::Despegar(cPista* pista) //preguntar si al hacer virtual corren ambas cosas para los dos ademas de lo q ya hace
+//distinto cada uno
 {
-	return false;
+	fechaDespegue->SetHoy();
+	//seguir 
 }
 
 bool cAvion::Aterrizar(cPista* pista)
 {
-	return false;
+	fechaDespegue->reSet();
 }
 
-//bool cAvion::Despegar(cPista* pista)
-//{
-//}
-//
-//bool cAvion::Aterrizar(cPista* pista)
-//{
-//	
-//}
 
-float cAvion::setTiempoVuelo()
+void cAvion::setTiempoVuelo()
 {
-	return 0.0f;
+	tiempomaxvuelo = (float)cantcombustible / 28.5;
 }
 
 void cAvion::ImprimirDatos()
