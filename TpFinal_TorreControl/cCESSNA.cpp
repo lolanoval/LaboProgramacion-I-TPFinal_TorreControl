@@ -21,6 +21,7 @@ bool cCESSNA::Despegar(cPista* pista)
 	cout << "Bajando alerones" << endl;
 	cout << "Activar control automatico" << endl;
 
+
 }
 
 bool cCESSNA::Aterrizar(cPista* pista)
