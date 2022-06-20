@@ -1,6 +1,7 @@
 #pragma warning(disable:4996)
 #define _CRT_SECURE_NO_WARNINGS
 #include "cFecha.h"
+#include <string>
 cFecha::cFecha() {
 	fecha.tm_hour = 0;
 	fecha.tm_min = 0;
@@ -45,7 +46,7 @@ cFecha::~cFecha() {
 
 float cFecha::HorasEntreFechas(cFecha* otra) //la otra es la fecha de fin
 {
-	int dif = 0;
+	float dif = 0;
 	time_t aux_inicio = mktime(&(fecha)); //paso las fechas a segundos
 	time_t aux_fin = mktime(&(otra->fecha));
 
@@ -57,7 +58,7 @@ float cFecha::HorasEntreFechas(cFecha* otra) //la otra es la fecha de fin
 			throw exception("Las fechas no son válidas");
 		else
 		{
-			dif = difftime(aux_fin, aux_inicio) / (3600); //calculo la diferencia en horas
+			dif = difftime(aux_fin, aux_inicio) /(float) (3600); //calculo la diferencia en horas
 			return dif;
 		}
 	}
@@ -83,12 +84,12 @@ bool cFecha::FechaCompleta()
 	return false;
 }
 
-string cFecha::To_string()
+string cFecha::toString()
 {
 	return to_string(fecha.tm_year + 1900) + "/" + to_string(fecha.tm_mon + 1) + "/" + to_string(fecha.tm_mday);
 }
 
 void cFecha::ImprimirFecha()
 {
-	cout << To_string() << endl;;
+	cout << toString() << endl;;
 }

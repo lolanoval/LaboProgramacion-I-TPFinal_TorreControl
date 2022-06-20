@@ -8,9 +8,9 @@ using namespace std;
 class cTorreControl
 {
 	cLista<cAvion>* ListaAviones;
-	cLista<cAvion>* AvionesEnVuelo;
-	cLista<cAvion>* AvionesDespegando;
-	cLista<cAvion>* AvionesAterrizando;
+	//cLista<cAvion>* AvionesEnVuelo;
+	//cLista<cAvion>* AvionesDespegando;
+	//cLista<cAvion>* AvionesAterrizando;
 	cLista<cPista>* Pistas;
 
 public:
@@ -19,10 +19,6 @@ public:
 	cPista* AsignarPista(cAvion* avion);
 	float TiempoOcupacionPista(cAvion* avion); //lo que tarda en aterrizar o despegar 
 	void EstadoAvion();
-	bool ReportarIncidente();//si pasa del tiempo max de vuelo, se reporta
-	void Interseccion();
-	void ImprimirDatos();
-	string toString();
 	cLista<cPista>* subListaPistasLibres();
 
 	void ImprimirAvionesEnVuelo();

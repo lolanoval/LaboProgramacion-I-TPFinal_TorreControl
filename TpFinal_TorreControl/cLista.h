@@ -18,7 +18,7 @@ public:
 	//void ImprimirPacientes(); //imprime el listado de receptores y donantes
 	T* operator-(T* P); //sobrecarga del operator - para quitar elementos
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
-	unsigned int getItemPos(T* P);
+	int getItemPos(T* P);
 	unsigned int getCA() { return ca; };
 	bool Agregar(T* P);
 	T* Quitar(T* P);
@@ -145,14 +145,13 @@ T* cLista<T>::operator[](unsigned int i)
 }
 
 template<class T>
-unsigned int cLista<T>::getItemPos(T* P)
+int cLista<T>::getItemPos(T* P)
 {
 	for (unsigned int i = 0; i < ca; i++)
 	{
 		if (lista[i] == P)
 			return i;
 	}
-
 	return -1;
 }
 

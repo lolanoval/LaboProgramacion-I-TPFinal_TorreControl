@@ -25,7 +25,7 @@ public:
 	cFecha(int dia, int mes, int anio, int hora, int minutos);
 	~cFecha();
 	void ImprimirFecha();
-	string To_string();
+	string toString();
 #pragma endregion
 
 #pragma region Metodos

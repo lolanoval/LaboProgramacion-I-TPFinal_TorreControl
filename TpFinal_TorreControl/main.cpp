@@ -5,13 +5,13 @@ using namespace std;
 int main()
 {
 	//Pistas:
-	cPista* pista1 = new cPista(100, 400, false);//pista disponible
-	cPista* pista2 = new cPista(300, 1000, false); //pista disponible
+	cPista* pista1 = new cPista(100, 400);//pista disponible
+	cPista* pista2 = new cPista(300, 1000); //pista disponible
 
 	//Aviones:
-	cCESSNA* cessna1 = new cCESSNA("A1"); //falta pasarle los atributos del constructor
-	cCESSNA* cessna2 = new cCESSNA("B2"); //idem
-	cBiplano* biplano1 = new cBiplano(30); //idem
+	cAvion* cessna1 = new cCESSNA(40, 10,50, eModelo::A1); 
+	cCESSNA* cessna2 = new cCESSNA(100,20,70,eModelo::B2); 
+	cBiplano* biplano1 = new cBiplano(200,0,100,30); 
 
 	//Listas:
 	cLista<cAvion>* listaAviones = new cLista<cAvion>;
@@ -27,21 +27,21 @@ int main()
 
 	//Simulación despegue: Vamos a utilizar try catch más adelante para salvar las diferentes excepciones por las 
 	//que puede no despegar (como supera peso max o no hay pistas que coincidan con los parametros del avion, etc
-	if (cessna1->Despegar())
+	
+
+	torre->DespegarAvion(cessna1);
+	
+	
+	/*if (cessna1->Despegar())
 		cout << "Despegue exitoso" << endl;
 	else
 		cout << "No hay pistas disponibles" << endl;
 	if (biplano1->Despegar())
 		cout << "Despegue exitoso" << endl;
 	else
-		cout << "No hay pistas disponibles" << endl;
+		cout << "No hay pistas disponibles" << endl;*/
 
-	//Simulacion aterrizaje: same despegue
-	if (cessna1->Aterrizar()) //if(algo==false) es mejor poner if(!algo) pq lo convierte en true y la unica forma de que entre
-		//un if a algo siguiente es que sea true lo que esta dentro
-		cout << "Aterrizaje exitoso" << endl;
-	else
-		cout << "No hay pistas disponibles" << endl;
+	
 
 	
 	system("pause");
