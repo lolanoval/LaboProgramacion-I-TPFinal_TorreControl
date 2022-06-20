@@ -1,8 +1,9 @@
 #pragma once
-#include <string>
-#include <stdio.h>
-#include <iostream>
 #include <ctime>
+#include <iomanip>
+#include <iostream>
+#include <stdlib.h>
+#include <windows.h>
 using namespace std;
  
 class cFecha
@@ -86,5 +87,17 @@ public:
 		fecha.tm_hour = 0;
 		fecha.tm_min = 0;
 	};
-
 };
+inline void Cronometro(float tiempototal) {
+
+	if (tiempototal == -1)
+		cout << "Avion Aterrizado" << endl;
+	else {
+		time_t current_time = time(0);
+		while (time(0) - current_time < tiempototal)
+		{
+			Sleep(1); //sleep suspende la ejecucion del programa temporalmente
+		}
+		cout << "Avion cayendo. AAAAAAA" << endl;
+	}
+}

@@ -146,6 +146,7 @@
     <ClInclude Include="cLista.h" />
     <ClInclude Include="cPista.h" />
     <ClInclude Include="cTorreControl.h" />
+    <ClInclude Include="Enum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cAvion.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="cFecha.cpp" />
     <ClCompile Include="cPista.cpp" />
     <ClCompile Include="cTorreControl.cpp" />
+    <ClCompile Include="Enum.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

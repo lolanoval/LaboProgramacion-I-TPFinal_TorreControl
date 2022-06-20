@@ -4,19 +4,19 @@
 using namespace std;
 class cPista
 {
-	int tamanio;
-	int distancia;
+	static int numPista; //uso de static
+	const int tamanio; //uso de const
+	const int distancia; //uso de const
 	bool ocupada;
 public:
-	cPista(int _tamanio, int _distancia, bool _ocupada);
+	cPista(const int _tamanio, const int _distancia);
 	~cPista();
-	void AvionDespegando();
-	void AvionAterrizando();
+	void Ocupar();
+	void Desocupar();
 	void ImprimirDatos();
-	string toString();
-	bool getOcupada() { return ocupada; };
-	int getTamanio() { return tamanio; };
-	int getDistancia() { return distancia; };
+	bool getOcupada();
+	int getTamanio()const;
+	int getDistancia()const;
 
 };
 

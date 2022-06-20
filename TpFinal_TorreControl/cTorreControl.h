@@ -1,11 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "cLista.h"
-#include "cAvion.h"
+#include "cLista.h" //ver si conviene que el include de lista este aca
 #include "cCESSNA.h"
 #include "cBiplano.h"
-#include "cPista.h"
 using namespace std;
 class cTorreControl
 {

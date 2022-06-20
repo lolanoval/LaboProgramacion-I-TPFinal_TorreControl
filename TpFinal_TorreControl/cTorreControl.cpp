@@ -18,8 +18,14 @@ cTorreControl::~cTorreControl()
 	delete Pistas;
 }
 
-cPista* cTorreControl::AsignarPista(cAvion* avion)
+cPista* cTorreControl::AsignarPista(cAvion* avion) //try catch
 {
+	if (avion == NULL)
+		throw new exception("Puntero nulo");
+	int pos = ListaAviones->getItemPos(avion);
+	if (pos == -1);
+	throw new exception("El avion no se encuentra en el sistema");
+
 	int tamanio = avion->tamanio;
 	float distancia = avion->Distancia();
 	cLista<cPista>* subLista = subListaPistasLibres();
@@ -28,13 +34,13 @@ cPista* cTorreControl::AsignarPista(cAvion* avion)
 	{
 		if ((*subLista)[i]->getDistancia() <= distancia && (*subLista)[i]->getTamanio() <= tamanio)
 		{
-			cPista* pistaLibre = (*subLista)[i];
+			cPista* pistaLibre = (*subLista)[i]; //ver si xq se elimina la subLista no se elimina el puntero; en ese caso hay que crear un new 
 			delete subLista;
 			return pistaLibre;
 		}
 	}
 	delete subLista;
-	return NULL;
+	throw new exception("No hay pistas libres");
 }
 
 void cTorreControl::ImprimirAvionesEnVuelo()
@@ -56,16 +62,38 @@ void cTorreControl::ImprimirPistasLibres()
 
 void cTorreControl::DespegarAvion(cAvion* avion)
 {
-	if (avion != NULL)
+	try
 	{
-		int pos = ListaAviones->getItemPos(avion);
-		if (pos != -1)
-		{
-			cPista* pista = AsignarPista(avion);
-			if (pista != NULL)
-				avion->Despegar(pista);
-		}
+		AsignarPista(avion);
 	}
+	catch (exception* e)//chequear esto si era asi
+	{
+		cout << e->what() << endl;
+		delete e;
+	}
+	avion->Despegar(AsignarPista(avion));
+
+	/*int pos = ListaAviones->getItemPos(avion);
+	if (pos != -1)
+	{
+		cPista* pista = AsignarPista(avion);
+		if (pista != NULL)
+		avion->Despegar(pista);
+	}*/
+}
+
+void cTorreControl::AterrizarAvion(cAvion* avion)
+{
+	try
+	{
+		AsignarPista(avion);
+	}
+	catch (exception* e)//chequear esto si era asi
+	{
+		cout << e->what() << endl;
+		delete e;
+	}
+	avion->Aterrizar(AsignarPista(avion)); 
 }
 
 float cTorreControl::TiempoOcupacionPista(cAvion* avion)

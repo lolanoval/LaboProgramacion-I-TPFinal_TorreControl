@@ -3,14 +3,17 @@
 #include <iostream>
 #include "cPista.h"
 #include "cFecha.h"
+#include "Enum.h"
 using namespace std;
 class cAvion
 {
 public:
 	friend class cTorreControl; //para que acceda a las fechas y reporte accidente en caso de ser necesario
-	int ID, cantcombustible, pasajeros, pasajerosmax, velocidad, helice, tamanio;
+	int cantcombustible, pasajeros, pasajerosmax, velocidad, helice, tamanio;
+	static int ID;
 	float tiempomaxvuelo;
-	cFecha* fechaDespegue;
+	eEstado estado;
+	cPista* pistaAsiganda;
   
 	//ver de agregar aceleracion al igual que velocidad 
 	//tanto tamaño como distancia condicionan la pista a asignar
@@ -23,6 +26,5 @@ public:
 	virtual float Distancia() = 0;
 	void ImprimirDatos();
 	string toString();
+	void operator++(); //sobrecarga del operador ++ para sumar pasajeros
 };
-
-/*hacer id const, */
