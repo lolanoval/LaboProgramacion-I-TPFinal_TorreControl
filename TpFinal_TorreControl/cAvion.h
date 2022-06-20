@@ -20,8 +20,8 @@ public:
 	//ver de hacer ID const y que se cree automáticamente
 	cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio);
 	virtual ~cAvion();
-	virtual bool Despegar(cPista* pista); //si pudo despegar no
-	virtual bool Aterrizar(cPista* pista); // si pudo aterrizar o no
+	virtual void Despegar(cPista* pista); //si pudo despegar no
+	virtual void Aterrizar(cPista* pista); // si pudo aterrizar o no
 	void setTiempoVuelo(); 
 	virtual float Distancia() = 0;
 	void ImprimirDatos();

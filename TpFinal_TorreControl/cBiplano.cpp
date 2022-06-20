@@ -16,16 +16,43 @@ void cBiplano::ImprimirDatos()
 {
 }
 
-bool cBiplano::Despegar(cPista* pista)
+void cBiplano::Despegar(cPista* pista)
 {
+	time_t current_time = time(0);
+	while (time(0) - current_time < TiempoUsoPista())
+	{
+		estado = eEstado::Despegando;
+		pistaAsiganda = pista;
+		pista->Ocupar();
+	}
 	this->aceleracion = 250;
-	cout << "Se inclina un angulo de 25°" << endl;
-	return true;
+	cout << "Se inclina un angulo de 25° del avion " << to_string(ID) << endl;
+	estado = eEstado::Volando;
+	pista->Desocupar();
+	pistaAsiganda = NULL;
 }
 
-bool cBiplano::Aterrizar(cPista* pista)
+void cBiplano::Aterrizar(cPista* pista)
 {
-	return false;
+	//tiempo default de aterrizaje 5 segundos
+	time_t current_time = time(0);
+	while (time(0) - current_time < (float)5)
+	{
+		estado = eEstado::Aterrizando;
+		pistaAsiganda = pista;
+		pista->Ocupar();
+	}
+	cout << "Volviendo a angulo default del avion " << to_string(ID) << endl;
+	estado = eEstado::enEspera;
+	this->aceleracion = 0;
+	pistaAsiganda->Desocupar();
+	pistaAsiganda = NULL;
+}
+
+float cBiplano::TiempoUsoPista()
+{
+	float tiempo = (float)velocidad / aceleracion;
+	return tiempo;
 }
 
 string cBiplano::toString()

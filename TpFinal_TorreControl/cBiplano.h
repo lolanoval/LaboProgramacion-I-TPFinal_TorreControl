@@ -13,8 +13,9 @@ public:
     cBiplano(int _cantcombustible, int _pasajerosmax, int _tamanio, int _aceleracion);
     ~cBiplano();
     void ImprimirDatos();
-    bool Despegar(cPista* pista); //si pudo despegar no
-    bool Aterrizar(cPista* pista); // si pudo aterrizar o no
+    void Despegar(cPista* pista); 
+    void Aterrizar(cPista* pista); 
+    float TiempoUsoPista();
     string toString();
     float Distancia();
 };

@@ -20,14 +20,14 @@ cAvion::~cAvion()
 {
 }
 
-bool cAvion::Despegar(cPista* pista)
+void cAvion::Despegar(cPista* pista)
 {
 	Cronometro(tiempomaxvuelo);
 	pistaAsiganda = pista;
 	this->estado = eEstado::Despegando;
 }
 
-bool cAvion::Aterrizar(cPista* pista)
+void cAvion::Aterrizar(cPista* pista)
 {
 	Cronometro(-1);
 	pistaAsiganda = pista;

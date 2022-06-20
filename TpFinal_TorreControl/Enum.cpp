@@ -21,3 +21,19 @@ string EstadoToString(eEstado estado)
 		break;
 	}
 }
+
+string ModeloToString(eModelo modelo)
+{
+	switch (modelo)
+	{
+	case eModelo::A1:
+		return "A1";
+		break;
+	case eModelo::B2:
+		return "B2";
+		break;
+	default:
+		return "";
+		break;
+	}
+}
