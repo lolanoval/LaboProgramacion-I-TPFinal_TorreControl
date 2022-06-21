@@ -14,12 +14,17 @@ class cTorreControl
 	cLista<cPista>* Pistas;
 
 public:
-	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas); 
+	cTorreControl();
+	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas);
 	~cTorreControl();
 	cPista* AsignarPista(cAvion* avion);
 	float TiempoOcupacionPista(cAvion* avion); //lo que tarda en aterrizar o despegar 
 	void EstadoAvion();
 	cLista<cPista>* subListaPistasLibres();
+
+//probando:
+	bool AgregarPista(cPista* pista);
+	bool AgregarAvion(cAvion* avion);
 
 	void ImprimirAvionesEnVuelo();
 	void ImprimirAvionesAterrizando();

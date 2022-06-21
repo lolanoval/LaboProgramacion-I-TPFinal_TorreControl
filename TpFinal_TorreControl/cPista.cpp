@@ -1,9 +1,10 @@
 #include "cPista.h"
 int cPista::numPista = 0;
 
-cPista::cPista(const int _tamanio, const int _distancia) :distancia(_distancia), tamanio(_tamanio)
+cPista::cPista(const int _tamanio, float _distancia) :tamanio(_tamanio)
 {
 	numPista++;
+	this->distancia = _distancia;
 	this->ocupada = false;
 }
 
@@ -28,9 +29,10 @@ void cPista::ImprimirDatos()
 		estado = "Ocupada";
 	if (!ocupada)
 		estado = "Libre";
-	cout << "Datos de la pista numero " << numPista << endl;
-	cout << "Ancho: " << tamanio << endl;
-	cout << "Largo: " << distancia << endl;
+
+	cout << "Datos de la pista numero " << to_string(numPista) << endl;
+	cout << "Ancho: " << to_string(tamanio) << endl;
+	cout << "Largo: " << to_string(distancia) << endl;
 	cout << "Estado: " << estado << endl;
 }
 
@@ -44,8 +46,8 @@ int cPista::getTamanio() const
 	return tamanio;
 }
 
-int cPista::getDistancia() const
+float cPista::getDistancia() 
 {
-	return distancia;
+	return this->distancia;
 }
 

@@ -80,8 +80,9 @@ string cCESSNA::toString()
 
 float cCESSNA::Distancia() 
 {
-	float tiempo = (float)velocidad / aceleracion;
-	float distancia = 1 / 2 * aceleracion * (tiempo * tiempo);
+	float _acel = (float)aceleracion;
+	float tiempo = (float)velocidad / _acel;
+	float distancia = 1 / 2 * _acel * (tiempo * tiempo);
 	return distancia;
 }
 
