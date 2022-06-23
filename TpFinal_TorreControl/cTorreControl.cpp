@@ -2,8 +2,8 @@
 
 cTorreControl::cTorreControl()
 {
-	ListaAviones = new cLista<cAvion>;
-	Pistas = new cLista<cPista>;
+	ListaAviones = new cLista<cAvion>();
+	Pistas = new cLista<cPista>();
 }
 
 cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas)
@@ -15,7 +15,6 @@ cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pis
 	}
 	this->Pistas = new cLista<cPista>;
 	for (int i = 0; i < _Pistas->getCA(); i++)
-
 	{
 		(*Pistas) + (*_Pistas)[i];
 	}
@@ -90,7 +89,8 @@ void cTorreControl::ImprimirAvionesDespegando()
 
 void cTorreControl::ImprimirPistasLibres()
 {
-	for (int i = 0; i < Pistas->getCA(); i++)
+	int j = Pistas->getCA();
+	for (int i = 0; i < j; i++)
 	{
 		//if ((*Pistas)[i]->getOcupada() == false)
 		(*Pistas)[i]->ImprimirDatos();

@@ -8,7 +8,8 @@ class cLista
 {
 protected:
 	T** lista;
-	unsigned int ca, ct;
+	int ca;
+	unsigned int ct;
 
 public:
 	cLista(unsigned int tam = TMAX);
@@ -19,7 +20,7 @@ public:
 	T* operator-(T* P); //sobrecarga del operator - para quitar elementos
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
 	int getItemPos(T* P);
-	unsigned int getCA() { return ca; };
+	unsigned int getCA() { return ca; }
 	bool Agregar(T* P);
 	T* Quitar(T* P);
 	bool Eliminar(T* P);
@@ -34,7 +35,7 @@ cLista<T>::cLista(unsigned int tam)
 	lista = new T * [ct];
 	for (unsigned int i = 0; i < ct; i++)
 	{
-		lista[i] = nullptr;
+		lista[i] = NULL;
 	}
 }
 
@@ -69,8 +70,8 @@ bool cLista<T>::Agregar(T* P)
 {
 	if (P != NULL && ca < ct)
 	{
-		lista[ca] = P;
 		ca++;
+		lista[ca] = P;
 		return true;
 	}
 	return false;
