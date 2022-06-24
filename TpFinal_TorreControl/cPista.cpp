@@ -24,16 +24,16 @@ void cPista::Desocupar()
 
 void cPista::ImprimirDatos()
 {
-	/*string estado;
+	string estado;
 	if (ocupada)
 		estado = "Ocupada";
 	if (!ocupada)
-		estado = "Libre";*/
+		estado = "Libre";
 
 	cout << "Datos de la pista numero " << to_string(numPista) << endl;
 	cout << "Ancho: " << getTamanio() << endl;
-	//cout << "Largo: " << to_string(distancia) << endl;
-	//cout << "Estado: " << estado << endl;
+	cout << "Largo: " << to_string(distancia) << endl;
+	cout << "Estado: " << estado << endl;
 }
 
 bool cPista::getOcupada() 

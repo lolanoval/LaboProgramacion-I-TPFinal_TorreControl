@@ -53,13 +53,13 @@ cLista<T>::~cLista()
 }
 
 template<class T>
-bool cLista<T>::operator+(T* P) // al agregar se asegura que el elemento no exista en la lista
+bool cLista<T>::operator+(T* puntero) // al agregar se asegura que el elemento no exista en la lista
 {
 	int i = 0;
-	int pos = getItemPos(P);
-	if (ca < ct && P != NULL && pos == -1) {
+	int pos = getItemPos(puntero);
+	if (ca < ct && pos == -1) {
 		ca++;
-		lista[ca] = P;
+		lista[ca] = puntero;
 		return true;
 	}
 	return false;
@@ -142,7 +142,7 @@ T* cLista<T>::operator[](unsigned int i)
 template<class T>
 int cLista<T>::getItemPos(T* P)
 {
-	for (unsigned int i = 0; i < ca; i++)
+	for (unsigned int i = 0; i < ca + 1; i++)
 	{
 		if (lista[i] == P)
 			return i;

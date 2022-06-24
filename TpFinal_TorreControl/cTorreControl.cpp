@@ -1,10 +1,10 @@
 #include "cTorreControl.h"
 
-cTorreControl::cTorreControl()
-{
-	ListaAviones = new cLista<cAvion>();
-	Pistas = new cLista<cPista>();
-}
+//cTorreControl::cTorreControl()
+//{
+//	ListaAviones = new cLista<cAvion>();
+//	Pistas = new cLista<cPista>();
+//}
 
 cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas)
 {
@@ -41,7 +41,7 @@ cPista* cTorreControl::AsignarPista(cAvion* avion) //try catch
 	{
 		throw new exception("El avion no se encuentra en el sistema");
 	}
-		int tamanio = avion->tamanio;
+		int tamanio = avion->getTam();
 		float distancia = avion->Distancia();
 		//cLista<cPista>* subLista = subListaPistasLibres();
 		int i = 0;

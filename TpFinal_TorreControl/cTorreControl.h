@@ -2,6 +2,7 @@
 #include "cLista.h" //ver si conviene que el include de lista este aca
 #include "cCESSNA.h"
 #include "cBiplano.h"
+#include <stdio.h>
 using namespace std;
 class cTorreControl
 {
@@ -10,7 +11,7 @@ private:
 	cLista<cPista>* Pistas;
 
 public:
-	cTorreControl();
+	//cTorreControl();
 	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas);
 	~cTorreControl();
 	cPista* AsignarPista(cAvion* avion);

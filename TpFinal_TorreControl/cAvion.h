@@ -7,7 +7,6 @@
 using namespace std;
 class cAvion
 {
-	friend class cTorreControl;
 protected:
 
 	//friend class cTorreControl; //para que acceda a las fechas y reporte accidente en caso de ser necesario
@@ -25,9 +24,11 @@ public:
 	virtual ~cAvion();
 	virtual void Despegar(cPista* pista); //si pudo despegar no
 	virtual void Aterrizar(cPista* pista); // si pudo aterrizar o no
+	int getTam() { return tamanio; }
 	void setTiempoVuelo(); 
 	virtual float Distancia() = 0;
 	void ImprimirDatos();
 	string toString();
 	void operator++(); //sobrecarga del operador ++ para sumar pasajeros
+	friend class cTorreControl;
 };

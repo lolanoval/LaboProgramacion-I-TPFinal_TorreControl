@@ -5,8 +5,8 @@ using namespace std;
 int main()
 {
 	//Pistas:
-	cPista* pista1 = new cPista(100, 400);//pista disponible
-	cPista* pista2 = new cPista(300, 1000); //pista disponible
+	cPista* pista1 = new cPista(100, (float)400);//pista disponible
+	cPista* pista2 = new cPista(300, (float)1000); //pista disponible
 
 	//Aviones:
 	cAvion* cessna1 = new cCESSNA(40, 10, 50, eModelo::A1);
@@ -24,30 +24,21 @@ int main()
 
 	//Torre de Control:
 	cTorreControl* torre = new cTorreControl(listaAviones, listaPistas);
+	
+	torre->DespegarAvion(cessna1);
+	torre->AterrizarAvion(biplano1);
+	torre->ImprimirAvionesAterrizando();
 
-	cTorreControl* torre2 = new cTorreControl();
-	torre2->AgregarAvion(cessna1);
-	torre2->AgregarPista(pista1);
-	torre2->AgregarPista(pista2);
-	
-	
-	torre->ImprimirPistasLibres();
-	//torre2->ImprimirPistasLibres();
-	//torre->DespegarAvion(cessna1);
-	
-	//(*listaAviones)[0]->ImprimirDatos();
-	
-	/*if (cessna1->Despegar())
-		cout << "Despegue exitoso" << endl;
-	else
-		cout << "No hay pistas disponibles" << endl;
-	if (biplano1->Despegar())
-		cout << "Despegue exitoso" << endl;
-	else
-		cout << "No hay pistas disponibles" << endl;*/
+	system("pause");
 
-	delete torre;
-	delete torre2;
+	torre->ImprimirAvionesEnVuelo();
+
+	delete torre; //borrando la torre se borran las listas
+	delete pista1;
+	delete pista2;
+	delete cessna1;
+	delete cessna2;
+	delete biplano1;
 
 	
 	system("pause");

@@ -51,7 +51,7 @@ void cBiplano::Aterrizar(cPista* pista)
 
 float cBiplano::TiempoUsoPista()
 {
-	float tiempo = (float)velocidad / aceleracion;
+	float tiempo = (float)velocidad / (float)aceleracion;
 	return tiempo;
 }
 
@@ -62,7 +62,7 @@ string cBiplano::toString()
 
 float cBiplano::Distancia()
 {
-	float tiempo = (float)velocidad / aceleracion;
-	float distancia = (1 / 2) * aceleracion * (tiempo * tiempo);
+	float tiempo = (float)velocidad / (float)aceleracion;
+	float distancia = (1 / 2) * (float)aceleracion * (tiempo * tiempo);
 	return distancia;
 }
