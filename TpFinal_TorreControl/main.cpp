@@ -15,18 +15,17 @@ int main()
 
 	//Listas:
 	cLista<cAvion>* listaAviones = new cLista<cAvion>;
-	cLista<cPista>* listaPistas = new cLista<cPista>;
+	ListaPistas* listaPistas = new ListaPistas();
 	(*listaAviones) + cessna1;
 	(*listaAviones) + cessna2;
 	(*listaAviones) + biplano1;
 	(*listaPistas) + pista1;
 	(*listaPistas) + pista2;
 
-
-
 	//Torre de Control:
 	cTorreControl* torre = new cTorreControl(listaAviones, listaPistas);
 
+//prueba: 
 	//cTorreControl* torre = new cTorreControl();
 	//torre->AgregarAvion(cessna1);
 	//torre->AgregarAvion(cessna2);
@@ -34,17 +33,28 @@ int main()
 	//torre->AgregarPista(pista1);
 	//torre->AgregarPista(pista2);
 
-	torre->ImprimirPistasLibres();
+	try
+	{
+		cessna1 + 100; //le agregamos carga
+		cessna1++; //le agregamos un pasajero 
+	}
+	catch (exception* e)
+	{
+		cout << string(e->what()) << endl;
+		delete e;
+	}
 
-	///*torre->DespegarAvion(cessna1);
-	//torre->AterrizarAvion(biplano1);
-	//torre->ImprimirAvionesAterrizando();*/
+	torre->DespegarAvion(cessna1);
+	torre->AterrizarAvion(biplano1);
+	torre->ImprimirAvionesAterrizando();
 
 	system("pause");
 
-	//torre->ImprimirAvionesEnVuelo();
+	torre->ImprimirAvionesEnVuelo();
 
-	delete torre; //borrando la torre se borran las listas
+	delete torre; 
+	delete listaAviones;
+	delete listaPistas;
 	delete pista1;
 	delete pista2;
 	delete cessna1;

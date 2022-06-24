@@ -10,6 +10,7 @@ cPista::cPista(const int _tamanio, float _distancia) :tamanio(_tamanio)
 
 cPista::~cPista()
 {
+	numPista--;
 }
 
 void cPista::Ocupar()

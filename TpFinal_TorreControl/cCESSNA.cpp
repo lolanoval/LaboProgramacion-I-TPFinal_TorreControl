@@ -94,8 +94,8 @@ float cCESSNA::TiempoUsoPista()
 
 void cCESSNA::operator+(int _carga)
 {
-	if ((_carga + carga) <= cargamax)
-		carga = carga + _carga;
-	else
-		cout << "La carga que desea agregar supera la carga maxima permitida" << endl;
+	if ((_carga + carga) > cargamax)
+		throw new exception("La carga que desea agregar supera la carga maxima permitida");
+
+	carga = carga + _carga;
 }

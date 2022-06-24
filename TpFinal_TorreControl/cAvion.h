@@ -17,9 +17,9 @@ protected:
 	cPista* pistaAsiganda;
   
 public:
-	//ver de agregar aceleracion al igual que velocidad 
+
 	//tanto tamaño como distancia condicionan la pista a asignar
-	//ver de hacer ID const y que se cree automáticamente
+	
 	cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio);
 	virtual ~cAvion();
 	virtual void Despegar(cPista* pista); //si pudo despegar no
@@ -31,5 +31,4 @@ public:
 	string toString();
 	eEstado getEstado() { return estado; }
 	void operator++(); //sobrecarga del operador ++ para sumar pasajeros
-	//friend class cTorreControl;
 };

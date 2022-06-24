@@ -12,7 +12,6 @@ public:
     cCESSNA(int _cantcombustible, int _pasajerosmax, int _tamanio, eModelo _modelo); //dependiendo el modelo se le asigna su aceleracion
     ~cCESSNA();
     float tiempoDescarga();
-    //ver de ir aumentando la carga a medida que se le agregan cosas (podemos ver de hacerlo durante la inicializacion)
     void setDatos();
 
     void Despegar(cPista* pista); //si pudo despegar no

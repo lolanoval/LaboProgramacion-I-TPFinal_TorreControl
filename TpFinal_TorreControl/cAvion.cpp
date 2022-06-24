@@ -50,8 +50,8 @@ string cAvion::toString()
 
 void cAvion::operator++()
 {
-	if (pasajeros < pasajerosmax)
-		pasajeros++;
-	else
-		cout << "No hay mas espacio en el avion" << endl;
+	if (pasajeros > pasajerosmax)
+		throw new exception("No hay mas espacip en el avion");
+
+	pasajeros++;
 }

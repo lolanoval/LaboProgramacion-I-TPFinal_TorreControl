@@ -1,5 +1,5 @@
 #pragma once
-#include "cLista.h" //ver si conviene que el include de lista este aca
+#include "ListaPistas.h" //ver si conviene que el include de lista este aca
 #include "cCESSNA.h"
 #include "cBiplano.h"
 #include <stdio.h>
@@ -8,16 +8,16 @@ class cTorreControl
 {
 private:
 	cLista<cAvion>* ListaAviones;
-	cLista<cPista>* Pistas;
+	ListaPistas* Pistas;
 
 public:
 	cTorreControl();
-	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas);
+	cTorreControl(cLista<cAvion>* _ListaAviones, ListaPistas* _Pistas);
 	~cTorreControl();
 	cPista* AsignarPista(cAvion* avion);
 	float TiempoOcupacionPista(cAvion* avion); //lo que tarda en aterrizar o despegar 
 	//void EstadoAvion();
-	cLista<cPista>* subListaPistasLibres();
+	//cLista<cPista>* subListaPistasLibres();
 
 //probando:
 	bool AgregarPista(cPista* pista);

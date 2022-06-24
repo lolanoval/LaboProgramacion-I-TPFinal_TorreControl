@@ -18,7 +18,7 @@ public:
 	bool operator+(T* P); //P= puntero que recibe, método agregar
 	//void ImprimirPacientes(); //imprime el listado de receptores y donantes
 	T* operator-(T* P); //sobrecarga del operator - para quitar elementos
-	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
+	T* operator[](int i); //se le pasa la posición y devuelve el puntero
 	int getItemPos(T* P);
 	unsigned int getCA() { return ca; }
 	bool Agregar(T* P);
@@ -45,7 +45,7 @@ cLista<T>::~cLista()
 {
 	if (lista != NULL) {
 
-		for (unsigned int i = 0; i < ca; i++)
+		for (int i = 0; i < ca; i++)
 		{
 			lista[i] = NULL;
 		}
@@ -131,7 +131,7 @@ bool cLista<T>::Eliminar(T* P)
 }
 
 template<class T>
-T* cLista<T>::operator[](unsigned int i)
+T* cLista<T>::operator[](int i)
 {
 	if (i <= ca)
 	{
@@ -143,7 +143,7 @@ T* cLista<T>::operator[](unsigned int i)
 template<class T>
 int cLista<T>::getItemPos(T* puntero)
 {
-	for (unsigned int i = 0; i < ca + 1; i++)
+	for (int i = 0; i < ca + 1; i++)
 	{
 		if (lista[i] == puntero)
 			return i;
