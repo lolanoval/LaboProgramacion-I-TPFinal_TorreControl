@@ -10,7 +10,6 @@ cAvion::cAvion(int _cantcombustible, int _pasajerosmax, int _tamanio)
 	this->velocidad = 0;
 	this->helice = 0;
 	this->tiempomaxvuelo = 0;
-	//fechaDespegue = new cFecha();
 	setTiempoVuelo();
 	this->pistaAsiganda = NULL;
 	this->estado = eEstado::enEspera;
@@ -24,14 +23,12 @@ void cAvion::Despegar(cPista* pista)
 {
 	Cronometro(tiempomaxvuelo);
 	pistaAsiganda = pista;
-	this->estado = eEstado::Despegando;
 }
 
 void cAvion::Aterrizar(cPista* pista)
 {
 	Cronometro(-1);
 	pistaAsiganda = pista;
-	this->estado = eEstado::Aterrizando;
 }
 
 void cAvion::setTiempoVuelo()
@@ -47,7 +44,7 @@ void cAvion::ImprimirDatos()
 
 string cAvion::toString()
 {
-	return "Avion de ID numero " + to_string(ID) + "\nCombustible: " + to_string(cantcombustible) + "\nTiempo maximo de vuelo: " + to_string(tiempomaxvuelo) +
+	return "Avion de ID numero " + to_string(ID) + "\nCombustible: "+to_string(cantcombustible) + "\nTiempo maximo de vuelo: " + to_string(tiempomaxvuelo) +
 		"\nCantidad de pasajeros: " + to_string(pasajeros) + "\nEstado: " + EstadoToString(estado);
 }
 

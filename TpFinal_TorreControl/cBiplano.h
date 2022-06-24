@@ -1,6 +1,4 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include "cAvion.h"
 using namespace std;
 class cBiplano :

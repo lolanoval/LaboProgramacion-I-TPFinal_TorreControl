@@ -1,12 +1,11 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include "cAvion.h"
 using namespace std;
 #define cargamax 1000
 class cCESSNA :
     public cAvion
 {
+private:
     eModelo modelo;
     int carga, aceleracion; //carga max es siempre 1000kg
 public:

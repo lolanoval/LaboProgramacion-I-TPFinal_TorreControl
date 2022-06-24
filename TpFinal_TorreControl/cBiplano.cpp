@@ -19,7 +19,7 @@ void cBiplano::ImprimirDatos()
 void cBiplano::Despegar(cPista* pista)
 {
 	time_t current_time = time(0);
-	while (time(0) - current_time < TiempoUsoPista())
+	while (time(0) - current_time < (float)5)
 	{
 		estado = eEstado::Despegando;
 		pistaAsiganda = pista;
@@ -63,6 +63,6 @@ string cBiplano::toString()
 float cBiplano::Distancia()
 {
 	float tiempo = (float)velocidad / aceleracion;
-	float distancia = 1 / 2 * aceleracion * (tiempo * tiempo);
+	float distancia = (1 / 2) * aceleracion * (tiempo * tiempo);
 	return distancia;
 }

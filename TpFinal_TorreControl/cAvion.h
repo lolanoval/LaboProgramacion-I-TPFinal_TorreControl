@@ -7,14 +7,17 @@
 using namespace std;
 class cAvion
 {
-public:
-	friend class cTorreControl; //para que acceda a las fechas y reporte accidente en caso de ser necesario
+	friend class cTorreControl;
+protected:
+
+	//friend class cTorreControl; //para que acceda a las fechas y reporte accidente en caso de ser necesario
 	int cantcombustible, pasajeros, pasajerosmax, velocidad, helice, tamanio;
 	static int ID;
 	float tiempomaxvuelo;
 	eEstado estado;
 	cPista* pistaAsiganda;
   
+public:
 	//ver de agregar aceleracion al igual que velocidad 
 	//tanto tamaño como distancia condicionan la pista a asignar
 	//ver de hacer ID const y que se cree automáticamente

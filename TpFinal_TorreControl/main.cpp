@@ -29,12 +29,13 @@ int main()
 	torre2->AgregarAvion(cessna1);
 	torre2->AgregarPista(pista1);
 	torre2->AgregarPista(pista2);
-
+	
 	
 	torre->ImprimirPistasLibres();
-	torre2->ImprimirPistasLibres();
+	//torre2->ImprimirPistasLibres();
 	//torre->DespegarAvion(cessna1);
 	
+	//(*listaAviones)[0]->ImprimirDatos();
 	
 	/*if (cessna1->Despegar())
 		cout << "Despegue exitoso" << endl;

@@ -94,7 +94,7 @@ inline void Cronometro(float tiempototal) {
 		cout << "Avion Aterrizado" << endl;
 	else {
 		time_t current_time = time(0);
-		while (time(0) - current_time < tiempototal)
+		while (time(0) - current_time < tiempototal) //hacer que parecusndo aterriza
 		{
 			Sleep(1); //sleep suspende la ejecucion del programa temporalmente
 		}

@@ -1,16 +1,12 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include "cLista.h" //ver si conviene que el include de lista este aca
 #include "cCESSNA.h"
 #include "cBiplano.h"
 using namespace std;
 class cTorreControl
 {
+private:
 	cLista<cAvion>* ListaAviones;
-	//cLista<cAvion>* AvionesEnVuelo;
-	//cLista<cAvion>* AvionesDespegando;
-	//cLista<cAvion>* AvionesAterrizando;
 	cLista<cPista>* Pistas;
 
 public:
@@ -19,7 +15,7 @@ public:
 	~cTorreControl();
 	cPista* AsignarPista(cAvion* avion);
 	float TiempoOcupacionPista(cAvion* avion); //lo que tarda en aterrizar o despegar 
-	void EstadoAvion();
+	//void EstadoAvion();
 	cLista<cPista>* subListaPistasLibres();
 
 //probando:
