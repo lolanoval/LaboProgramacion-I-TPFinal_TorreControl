@@ -8,7 +8,17 @@ cTorreControl::cTorreControl()
 
 cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas)
 {
-	this->ListaAviones = new cLista<cAvion>;
+	try
+	{
+		this->ListaAviones = _ListaAviones;
+		this->Pistas = _Pistas;
+	}
+	catch (exception* e)
+	{
+		cout << string(e->what()) << endl;
+		delete e;
+	}
+	/*this->ListaAviones = new cLista<cAvion>;
 	for (int i = 0; i < _ListaAviones->getCA(); i++)
 	{
 		(*ListaAviones) + (*_ListaAviones)[i];
@@ -17,7 +27,7 @@ cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pis
 	for (int i = 0; i < _Pistas->getCA(); i++)
 	{
 		(*Pistas) + (*_Pistas)[i];
-	}
+	}*/
 }
 
 cTorreControl::~cTorreControl()

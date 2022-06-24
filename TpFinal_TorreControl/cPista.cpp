@@ -25,9 +25,9 @@ void cPista::Desocupar()
 void cPista::ImprimirDatos()
 {
 	string estado;
-	if (ocupada)
+	if (getOcupada())
 		estado = "Ocupada";
-	if (!ocupada)
+	if (!(getOcupada()))
 		estado = "Libre";
 
 	cout << "Datos de la pista numero " << to_string(numPista) << endl;

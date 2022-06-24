@@ -36,9 +36,9 @@ int main()
 
 	torre->ImprimirPistasLibres();
 
-	torre->DespegarAvion(cessna1);
-	torre->AterrizarAvion(biplano1);
-	torre->ImprimirAvionesAterrizando();
+	///*torre->DespegarAvion(cessna1);
+	//torre->AterrizarAvion(biplano1);
+	//torre->ImprimirAvionesAterrizando();*/
 
 	system("pause");
 

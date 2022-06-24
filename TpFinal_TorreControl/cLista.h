@@ -25,6 +25,7 @@ public:
 	T* Quitar(T* P);
 	bool Eliminar(T* P);
 	T* BuscarenPos(int i);
+	void operator=(cLista<T>* nuevaLista);
 };
 
 template<class T>
@@ -156,5 +157,19 @@ T* cLista<T>::BuscarenPos(int i)
 	if (i <= ca)
 	{
 		return lista[i];
+	}
+}
+
+template<class T>
+inline void cLista<T>::operator=(cLista<T>* nuevaLista)
+{
+	if (nuevaLista == NULL)
+		throw new exception("Lista vacia");
+	if (nuevaLista->getCA() > ca)
+		throw new exception("Nueva lista supera el tamaño posible para almacenar");
+
+	for (unsigned int i = 0; i < nuevaLista->getCA(); i++)
+	{
+		this->lista[i] = nuevaLista[i];
 	}
 }
