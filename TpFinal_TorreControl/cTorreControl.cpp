@@ -64,7 +64,7 @@ void cTorreControl::ImprimirAvionesEnVuelo()
 {
 	for (int i = 0; i < ListaAviones->getCA(); i++)
 	{
-		if (EstadoToString((*ListaAviones)[i]->estado) == "Volando")
+		if (EstadoToString((*ListaAviones)[i]->getEstado()) == "Volando")
 			(*ListaAviones)[i]->ImprimirDatos();
 	}
 }
@@ -73,7 +73,7 @@ void cTorreControl::ImprimirAvionesAterrizando()
 {
 	for (int i = 0; i < ListaAviones->getCA(); i++)
 	{
-		if (EstadoToString((*ListaAviones)[i]->estado) == "Aterrizando")
+		if (EstadoToString((*ListaAviones)[i]->getEstado()) == "Aterrizando")
 			(*ListaAviones)[i]->ImprimirDatos();
 	}
 }
@@ -82,7 +82,7 @@ void cTorreControl::ImprimirAvionesDespegando()
 {
 	for (int i = 0; i < ListaAviones->getCA(); i++)
 	{
-		if (EstadoToString((*ListaAviones)[i]->estado) == "Despegando")
+		if (EstadoToString((*ListaAviones)[i]->getEstado()) == "Despegando")
 			(*ListaAviones)[i]->ImprimirDatos();
 	}
 }

@@ -29,6 +29,7 @@ public:
 	virtual float Distancia() = 0;
 	void ImprimirDatos();
 	string toString();
+	eEstado getEstado() { return estado; }
 	void operator++(); //sobrecarga del operador ++ para sumar pasajeros
-	friend class cTorreControl;
+	//friend class cTorreControl;
 };

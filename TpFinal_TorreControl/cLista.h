@@ -140,11 +140,11 @@ T* cLista<T>::operator[](unsigned int i)
 }
 
 template<class T>
-int cLista<T>::getItemPos(T* P)
+int cLista<T>::getItemPos(T* puntero)
 {
 	for (unsigned int i = 0; i < ca + 1; i++)
 	{
-		if (lista[i] == P)
+		if (lista[i] == puntero)
 			return i;
 	}
 	return -1;
