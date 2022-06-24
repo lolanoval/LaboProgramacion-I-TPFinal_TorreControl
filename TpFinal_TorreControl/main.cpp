@@ -22,16 +22,27 @@ int main()
 	(*listaPistas) + pista1;
 	(*listaPistas) + pista2;
 
+
+
 	//Torre de Control:
 	cTorreControl* torre = new cTorreControl(listaAviones, listaPistas);
-	
+
+	//cTorreControl* torre = new cTorreControl();
+	//torre->AgregarAvion(cessna1);
+	//torre->AgregarAvion(cessna2);
+	//torre->AgregarAvion(biplano1);
+	//torre->AgregarPista(pista1);
+	//torre->AgregarPista(pista2);
+
+	torre->ImprimirPistasLibres();
+
 	torre->DespegarAvion(cessna1);
 	torre->AterrizarAvion(biplano1);
 	torre->ImprimirAvionesAterrizando();
 
 	system("pause");
 
-	torre->ImprimirAvionesEnVuelo();
+	//torre->ImprimirAvionesEnVuelo();
 
 	delete torre; //borrando la torre se borran las listas
 	delete pista1;

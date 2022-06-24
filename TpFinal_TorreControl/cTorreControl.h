@@ -11,7 +11,7 @@ private:
 	cLista<cPista>* Pistas;
 
 public:
-	//cTorreControl();
+	cTorreControl();
 	cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas);
 	~cTorreControl();
 	cPista* AsignarPista(cAvion* avion);

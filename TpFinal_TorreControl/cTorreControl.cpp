@@ -1,10 +1,10 @@
 #include "cTorreControl.h"
 
-//cTorreControl::cTorreControl()
-//{
-//	ListaAviones = new cLista<cAvion>();
-//	Pistas = new cLista<cPista>();
-//}
+cTorreControl::cTorreControl()
+{
+	ListaAviones = new cLista<cAvion>();
+	Pistas = new cLista<cPista>();
+}
 
 cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pistas)
 {
@@ -22,14 +22,16 @@ cTorreControl::cTorreControl(cLista<cAvion>* _ListaAviones, cLista<cPista>* _Pis
 
 cTorreControl::~cTorreControl()
 {
-	if (ListaAviones != NULL)
-	{
-		delete ListaAviones;
-	}
-	if (Pistas != NULL)
-	{
-		delete Pistas;
-	}
+	//if (ListaAviones != NULL)
+	//{
+	//	delete ListaAviones;
+	//}
+	//if (Pistas != NULL)
+	//{
+	//	delete Pistas;
+	//}
+	delete ListaAviones;
+	delete Pistas;
 }
 
 cPista* cTorreControl::AsignarPista(cAvion* avion) //try catch
